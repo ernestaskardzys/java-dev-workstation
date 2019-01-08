@@ -9,6 +9,7 @@ It will install:
 - Curl
 - Vim
 - Git
+- Maven
 
 # Installation
 
@@ -27,3 +28,7 @@ To try that Docker works, you can try executing the following command:
 ```bash
 $ docker run hello-world
 ```
+
+# Notes
+
+As part of installation, this project sets default parameters for git (sets name and email) and some settings for vim (sets numbers for lines, turns on syntax, sets tabs as 4 spaces).
