@@ -1,0 +1,16 @@
+- name: Install some basic packages, like vim
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - vim
+    - curl
+    - git
+    - maven
+    
+- name: Set default (global) settings for vim
+  template: src=vimrc dest=/home/{{ item }}/.vimrc
+  with_items: '{{ users_list }}'
+
+- name: Set default (global) variables for git
+  template: src=gitconfig dest=/home/{{ item }}/.gitconfig
+  with_items: '{{ users_list }}'

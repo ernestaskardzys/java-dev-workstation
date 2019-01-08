@@ -1,0 +1,10 @@
+---
+- name: Install Java, vim, tomcat and other utilities for development
+  hosts: localhost
+  become: true
+  become_method: sudo
+
+  roles:
+    - common
+    - java11
+    - docker-ce

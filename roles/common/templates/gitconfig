@@ -1,0 +1,9 @@
+[user]
+name = {{ user_full_name }}
+email = {{ user_email }}
+
+[alias]
+aj = add *java
+fp = fetch --prune
+cm = commit -m
+cd = checkout develop

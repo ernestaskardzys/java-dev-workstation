@@ -1,0 +1,9 @@
+# Full name of the user
+user_full_name: 'Ernestas Kardzys'
+
+# Email of the user
+user_email: 'ernestas.kardzys@gmail.com'
+
+# List of users who want to have additional software
+users_list:
+    - 'ernestas'
