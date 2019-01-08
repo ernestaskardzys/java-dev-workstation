@@ -8,9 +8,19 @@
     - maven
     
 - name: Set default (global) settings for vim
-  template: src=vimrc dest=/home/{{ item }}/.vimrc
+  template: 
+    src: vimrc 
+    dest: /home/{{ item }}/.vimrc
+    owner: '{{ item }}'
+    group: '{{ item }}'
+    mode: '0644'	
   with_items: '{{ users_list }}'
 
 - name: Set default (global) variables for git
-  template: src=gitconfig dest=/home/{{ item }}/.gitconfig
+  template: 
+    src: gitconfig
+    dest: /home/{{ item }}/.gitconfig
+    owner: '{{ item }}'
+    group: '{{ item }}'
+    mode: '0644' 
   with_items: '{{ users_list }}'

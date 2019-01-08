@@ -1,5 +1,5 @@
 ---
-- name: Install Java, vim, tomcat and other utilities for development
+- name: Install Java, vim and other utilities for development
   hosts: localhost
   become: true
   become_method: sudo
