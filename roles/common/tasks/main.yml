@@ -7,7 +7,7 @@
     - git
     - maven
     
-- name: Set default (global) settings for vim
+- name: Set default vim settings for each user
   template: 
     src: vimrc 
     dest: /home/{{ item }}/.vimrc
@@ -16,11 +16,21 @@
     mode: '0644'	
   with_items: '{{ users_list }}'
 
-- name: Set default (global) variables for git
+- name: Set default git settings for each user
   template: 
     src: gitconfig
     dest: /home/{{ item }}/.gitconfig
     owner: '{{ item }}'
     group: '{{ item }}'
     mode: '0644' 
+  with_items: '{{ users_list }}'
+
+- name: Add git branch name to BASH console
+  blockinfile:
+    dest: /home/{{ item }}/.bashrc
+    block: |
+        parse_git_branch() {
+	    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+        }
+        export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
   with_items: '{{ users_list }}'
