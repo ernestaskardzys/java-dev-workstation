@@ -7,3 +7,4 @@ aj = add *java
 fp = fetch --prune
 cm = commit -m
 cd = checkout develop
+c  = checkout
