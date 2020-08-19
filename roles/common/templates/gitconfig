@@ -8,3 +8,4 @@ fp = fetch --prune
 cm = commit -m
 cd = checkout develop
 c  = checkout
+cb = checkout -b
