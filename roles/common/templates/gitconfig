@@ -9,3 +9,4 @@ cm = commit -m
 cd = checkout develop
 c  = checkout
 cb = checkout -b
+po = push --set-upstream origin
