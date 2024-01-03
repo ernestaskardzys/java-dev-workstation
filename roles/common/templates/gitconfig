@@ -3,7 +3,8 @@ name = {{ user_full_name }}
 email = {{ user_email }}
 
 [alias]
-aj = add *java
+ak = add *.kt
+aj = add *.java
 fp = fetch --prune
 cm = commit -m
 cd = checkout develop
@@ -11,3 +12,6 @@ c  = checkout
 cb = checkout -b
 po = push --set-upstream origin
 lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[push]
+autoSetupRemote = true
